@@ -57,4 +57,6 @@ def print_conversion():
                 continue
 
 
-print_conversion()
+run = True
+while run:
+    run = print_conversion()
