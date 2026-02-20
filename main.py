@@ -21,40 +21,40 @@ def input_to_list(user_input):
 
 
 def print_conversion():
-    while True:  # for repeatability and exiting program
-        value, units_from, units_to = input_to_list(input())
-        if value is None:
-            break
-        if units_from != -1:
-            try:
-                print_test = False  # for parsing through dictionaries
-                for (
-                    dictionary
-                ) in dictionaries:  # goes through the dictionaries (currently only two)
-                    if (  # if either of the unit values are unknown
-                        dictionary.get(units_from) is None
-                        or dictionary.get(units_to) is None
-                    ):
-                        continue
-                    else:  # if both units are in one dictionary, converts
-                        units_standard = (
-                            dictionary.get(units_from) * value
-                        )  # converts to standard value (m, kg)
-                        unit_final = units_standard / dictionary.get(
-                            units_to
-                        )  # converts standard value to final value
-                        print(unit_final, units_to)  # prints desired value and units
-                        print_test = True  # notifies if conversion happens
-                        break
-                if (
-                    print_test is False
-                ):  # if no print happens, the units were unknown somehow
-                    print("Unknown units")
-            except ValueError:
-                print(
-                    "Incorrect format: '<value> <initial units> <final units>'"
-                )  # shows correct format
-                continue
+    value, units_from, units_to = input_to_list(input())
+    if value is None:
+        return False
+    if units_from != -1:
+        try:
+            print_test = False  # for parsing through dictionaries
+            for (
+                dictionary
+            ) in dictionaries:  # goes through the dictionaries (currently only two)
+                if (  # if either of the unit values are unknown
+                    dictionary.get(units_from) is None
+                    or dictionary.get(units_to) is None
+                ):
+                    continue
+                else:  # if both units are in one dictionary, converts
+                    units_standard = (
+                        dictionary.get(units_from) * value
+                    )  # converts to standard value (m, kg)
+                    unit_final = units_standard / dictionary.get(
+                        units_to
+                    )  # converts standard value to final value
+                    print(unit_final, units_to)  # prints desired value and units
+                    print_test = True  # notifies if conversion happens
+                    return True
+            if (
+                print_test is False
+            ):  # if no print happens, the units were unknown somehow
+                print("Unknown units")
+        except ValueError:
+            print(
+                "Incorrect format: '<value> <initial units> <final units>'"
+            )  # shows correct format
+            return True
+    return True
 
 
 run = True
