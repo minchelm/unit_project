@@ -4,7 +4,7 @@ dictionaries = unit_dict()
 
 
 def input_to_list(user_input):
-    # input from user [value (type float), initial units (type string), final units (type string)]
+    # input from user value , initial units , final units
     user_input = user_input.split()
     if len(user_input) != 3:  # if there is not three inputs will loop again
         return None, None, None
@@ -24,7 +24,9 @@ def conversion(user_input):
             print_test = False  # for parsing through dictionaries
             for (
                 dictionary
-            ) in dictionaries:  # goes through the dictionaries (currently only two)
+            ) in (
+                dictionaries
+            ):  # goes through the dictionaries (currently only two)
                 if (  # if either of the unit values are unknown
                     dictionary.get(units_from) is None
                     or dictionary.get(units_to) is None
