@@ -28,3 +28,9 @@ Purpose: takes one user input in the format of value, initial units, final units
 	- able to take any unit names
 		- like km, kilometers, kilometres
 	- program ends when escape is pressed
+- My issues with Desmos:
+	- lack of constants, cant call them when needed, have to pull them individually
+	- cant have separate windows for different calculations, all in one line
+	- graph is separate program, cant run concurrently
+	- multiple answers, only one above.
+	
