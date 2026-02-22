@@ -33,4 +33,4 @@ Purpose: takes one user input in the format of value, initial units, final units
 	- cant have separate windows for different calculations, all in one line
 	- graph is separate program, cant run concurrently
 	- multiple answers, only one above.
-	
+

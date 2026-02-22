@@ -1,8 +1,9 @@
-from window_application import Window
+# from window_application import Unit_Window
+from calculator import Calculator_Window
 
 
-window = Window()
+calculator = Calculator_Window()
 
-window.make_window()
+calculator.make_window()
 
-window.root.mainloop()  # creates initial window instance
+calculator.root.mainloop()  # creates initial window instance
