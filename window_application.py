@@ -3,7 +3,7 @@ import tkinter as tk
 import sys
 
 
-class Window:
+class Unit_Window:
     history_count = 3  # initial row number of the history count
     root = tk.Tk()  # creates window
     root.geometry("475x600")  # sets window size
